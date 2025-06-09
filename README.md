@@ -3,7 +3,6 @@
 ## Network Intelligence Framework
 
 ![badNmap Logo](https://img.shields.io/badge/badNmap-v1.0-red?style=for-the-badge&logo=security)
-![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Kali%20Linux-purple?style=for-the-badge)
 
 ### 🔥 "Fly High!"
