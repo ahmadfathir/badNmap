@@ -199,7 +199,6 @@ Scans are saved in the current working directory with descriptive names:
 - **Security Research Community** - For continuous improvements and feedback
 - **Offensive Security Team** - For Kali Linux and penetration testing methodologies
 - **Kali Linux Development Team** - For the advanced security platform
-- **Open Source Security Tools** - Metasploit Framework, OWASP Foundation
 
 ### Technical Features
 badNmap incorporates advanced features including:
