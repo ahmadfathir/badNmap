@@ -1,13 +1,14 @@
 # badNmap v1.0 "fckingWing"
 
-## Network Intelligence Framework
+## Advanced Network Security Suite
 
 ![badNmap Logo](https://img.shields.io/badge/badNmap-v1.0-red?style=for-the-badge&logo=security)
-![Platform](https://img.shields.io/badge/Platform-Kali%20Linux-purple?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Linux-purple?style=for-the-badge)
+![Terminal](https://img.shields.io/badge/Terminal-Multi--Compatible-green?style=for-the-badge)
 
 ### 🔥 "Fly High!"
 
-badNmap is an advanced network reconnaissance and security assessment framework developed for professional penetration testers and security researchers. This tool serves as a revolutionary nmap wrapper with an intuitive red/black themed interface and comprehensive attack modules.
+badNmap is a revolutionary network reconnaissance and security assessment framework designed for professional penetration testers and security researchers. This advanced nmap wrapper features an intuitive red/black themed interface with comprehensive attack modules and intelligent scanning capabilities.
 
 ## ✨ Features
 
@@ -67,28 +68,35 @@ badNmap is an advanced network reconnaissance and security assessment framework 
 ## 🛠️ Requirements
 
 ### System Requirements
-- **OS**: Kali Linux, Ubuntu, Parrot OS, or other Linux distributions
+- **OS**: Linux distributions (Kali Linux, Ubuntu, Debian, CentOS, Fedora, Arch, openSUSE)
 - **Architecture**: x86_64
 - **RAM**: Minimum 2GB
 - **Storage**: 100MB free space
-- **Network**: Active internet connection for dependency validation
+- **Network**: Active internet connection for dependency validation and auto-installation
 
 ### Dependencies
-- `nmap` - Network exploration tool and scanning engine
-- `xterm` - Terminal emulator for scan execution
+- `nmap` - Network exploration tool and scanning engine (auto-installed if missing)
+- **Terminal Emulator** (auto-detected and installed):
+  - `gnome-terminal` (preferred)
+  - `konsole` (KDE)
+  - `xfce4-terminal` (XFCE)
+  - `mate-terminal` (MATE)
+  - `lxterminal` (LXDE)
+  - `terminator`
+  - `xterm` (fallback)
+  - `x-terminal-emulator` (system default)
 - `firefox` - Web browser for report viewing (optional)
 - `xsltproc` - XSLT processor for HTML report conversion
 - Root privileges (required for raw socket operations)
-- X11 graphical environment
+- X11 graphical environment (DISPLAY variable must be set)
 - Active internet connection for dependency validation
 
 ## 📦 Installation
-### Manual Install
-```bash
-# Ensure dependencies are installed
-sudo apt update
-sudo apt install nmap xterm firefox xsltproc
 
+### Automatic Installation (Recommended)
+badNmap features intelligent auto-installation that detects your system and installs missing dependencies automatically.
+
+```bash
 # Download badNmap
 git clone https://github.com/ahmadfathir/badnmap.git
 cd badnmap
@@ -96,7 +104,7 @@ cd badnmap
 # Make executable
 chmod +x badnmap.sh
 
-# Run badNmap
+# Run badNmap (dependencies will be auto-installed)
 sudo ./badnmap.sh
 ```
 
@@ -130,51 +138,18 @@ sudo ./badnmap.sh
 - Choose report format (XML, HTML, Text, or All Formats)
 - Reports will be automatically saved in Reports/ folder
 
-## 🎛️ Menu Structure
-
-```
-badNmap Main Menu
-├── [01] Lightning Network Scan
-├── [02] Reconnaissance Engine
-│   ├── Host Discovery (Network Sweep)
-│   ├── Port Scanning & Service Detection
-│   ├── Operating System Detection
-│   ├── Service Version Enumeration
-│   ├── Aggressive Discovery Scan
-│   ├── UDP Service Discovery
-│   └── Network Topology Mapping
-├── [03] Vulnerability Hunter
-│   ├── SSL/TLS Security Assessment
-│   ├── Web Application Vulnerabilities
-│   ├── Database Security Scan
-│   ├── Network Service Vulnerabilities
-│   ├── SMB/NetBIOS Vulnerabilities
-│   ├── Comprehensive Vulnerability Scan
-│   └── Custom Script Execution
-├── [04] Phantom Stealth Operations
-│   ├── SYN Stealth Scan
-│   ├── FIN Stealth Scan
-│   ├── NULL Stealth Scan
-│   ├── XMAS Stealth Scan
-│   ├── Idle Scan (Zombie)
-│   ├── Fragmented Packets
-│   └── Decoy Scan
-├── [05] Credential Breaker Suite
-│   ├── SSH Brute Force Attack
-│   ├── FTP Authentication Testing
-│   ├── HTTP Basic Auth Brute Force
-│   ├── MySQL Database Brute Force
-│   ├── SMB Share Authentication
-│   ├── SNMP Community String Testing
-│   └── Default Credential Check
-├── [06] Firewall Penetration Engine
-├── [07] Precision Port Scanner
-├── [08] Elite Intelligence Reports
-├── [09] Hall of Fame & Credits
-└── [10] Shutdown badNmap
-```
 
 ## 🔧 Advanced Configuration
+
+### Automatic File Naming
+badNmap automatically generates timestamped output files for all scans:
+```bash
+# Examples of auto-generated filenames:
+lightning_scan_20241210_143052.txt
+ssl_tls_security_20241210_143125.txt
+ssh_bruteforce_20241210_143200.txt
+stealth_syn_scan_20241210_143245.txt
+```
 
 ### Custom Nmap Scripts
 badNmap supports custom nmap script execution:
@@ -184,32 +159,23 @@ badNmap supports custom nmap script execution:
 # Enter script name, example: http-sql-injection
 ```
 
-### Output Directory
-All scan reports are saved to:
+### Output Directories
+Scans are saved in the current working directory with descriptive names:
+```bash
+./
+├── lightning_scan_YYYYMMDD_HHMMSS.txt
+├── ssl_tls_security_YYYYMMDD_HHMMSS.txt
+├── web_app_vuln_YYYYMMDD_HHMMSS.txt
+├── syn_stealth_scan_YYYYMMDD_HHMMSS.txt
+└── Reports/
+    ├── custom_report.xml
+    ├── custom_report.html
+    └── custom_report.txt
 ```
-./Reports/
-├── scan_report.xml
-├── scan_report.html
-├── scan_report.txt
-└── scan_report.grep
-```
-
-### Timing Templates
-badNmap uses optimized timing templates:
-- `-T4`: Aggressive timing (default for most scans)
-- `-T3`: Normal timing
-- `-T5`: Insane timing (very fast, may be detected)
-
-### Stealth Features
-badNmap includes advanced evasion techniques:
-- Fragmented packet scanning
-- Decoy host randomization
-- Multiple stealth scan types (SYN, FIN, NULL, XMAS)
-- Idle scan using zombie hosts
 
 ## ⚠️ Legal Disclaimer
 
-**IMPORTANT**: badNmap is developed for educational and authorized penetration testing purposes ONLY.
+**IMPORTANT**: badNmap is developed for educational ONLY.
 
 ### ✅ Legal Usage
 - Penetration testing on your own systems
@@ -226,86 +192,29 @@ badNmap includes advanced evasion techniques:
 
 **Users are fully responsible for the use of this tool. Developers are not responsible for misuse.**
 
-## 🐛 Troubleshooting
-
-### Common Issues
-
-#### 1. Permission Denied
-```bash
-# Solution:
-sudo chmod +x badnmap.sh
-sudo ./badnmap.sh
-```
-
-#### 2. Dependencies Missing
-```bash
-# Install missing dependencies:
-sudo apt update
-sudo apt install nmap xterm firefox xsltproc
-```
-
-#### 3. Display Issues
-```bash
-# Ensure X11 forwarding if using SSH:
-ssh -X username@hostname
-
-# Or run in local graphical environment
-# badNmap requires DISPLAY variable to be set
-export DISPLAY=:0
-```
-
-#### 4. Nmap Not Found
-```bash
-# Install nmap:
-sudo apt install nmap
-
-# Verify installation:
-which nmap
-nmap --version
-```
-
-## 🤝 Contributing
-
-We welcome contributions from the security community!
-
-### How to Contribute
-1. Fork the repository
-2. Create a feature branch
-3. Implement improvements
-4. Test thoroughly
-5. Submit a pull request
-
-### Areas for Contribution
-- New scanning modules
-- Enhanced reporting features
-- Performance optimizations
-- Bug fixes
-- Documentation improvements
-- Translation to other languages
-
-
 ## 🏆 Credits & Acknowledgments
 
 ### Special Recognition
-- **Nmap Development Team** - Gordon Lyon (Fyodor) for creating Nmap
-- **Offensive Security Team** - For Kali Linux and security tools
-- **Security Research Community** - For continuous improvements
-- **Open Source Security Tools** - Metasploit, OWASP, and others
+- **Nmap Development Team** - Gordon Lyon (Fyodor) for creating Nmap (https://nmap.org)
+- **Security Research Community** - For continuous improvements and feedback
+- **Offensive Security Team** - For Kali Linux and penetration testing methodologies
+- **Kali Linux Development Team** - For the advanced security platform
+- **Open Source Security Tools** - Metasploit Framework, OWASP Foundation
 
-### Inspiration
-badNmap is inspired by the need for reconnaissance tools that are:
-- User-friendly yet powerful
-- Comprehensive attack modules in one interface
-- Professional reporting capabilities
-- Advanced stealth and evasion techniques
-- Educational for learning penetration testing
+### Technical Features
+badNmap incorporates advanced features including:
+- **Multi-Distribution Support** - Auto-detection and installation across Linux distros
+- **Terminal Compatibility** - Support for 8+ different terminal emulators
+- **Intelligent Dependency Management** - Automatic detection and installation
+- **Advanced Stealth Capabilities** - Multiple evasion techniques
+- **Professional Reporting** - Multiple output formats with timestamping
+- **User-Friendly Interface** - Intuitive menu system with comprehensive modules
 
 ## 📞 Support & Contact
 
 ### Get Help
 - **Documentation**: Read this README thoroughly
 - **Issues**: Report bugs through GitHub issues
-- **Security**: Report security issues privately
 
 ### Stay Updated
 - ⭐ Star the repository for updates
@@ -314,8 +223,12 @@ badNmap is inspired by the need for reconnaissance tools that are:
 
 ---
 
-**badNmap v1.0 "fckingWing" - Network Intelligence Framework! 🔥**
+**badNmap v1.0 "fckingWing" - Advanced Network Security Suite! 🔥**
+
+*Revolutionary Penetration Testing Framework*
 
 *Developed with ❤️ by lalatx1 (github.com/ahmadfathir)*
+
+**"Fly your damn wings!"**
 
 ---
